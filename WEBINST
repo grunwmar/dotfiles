@@ -2,3 +2,16 @@
 URL=https://github.com/grunwmar/dotfiles.git
 DOTFILES=$HOME/.dotfiles
 git clone $URL $DOTFILES
+cd $DOTFILES
+./distribute.py
+
+echo ""
+echo ""
+echo -n "Install referenced packages and do commands referenced in 'packages.toml'? [N/y] "
+read answ
+
+if [[ $answ = "y" ]]; then
+  ./install.py
+fi
+
+

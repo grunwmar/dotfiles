@@ -1,0 +1,21 @@
+[install]
+description = "Installed packages and commands."
+
+
+[install.packagers]
+dnf = ['neovim', 'vlc', 'gimp', 'calibre']
+
+
+[install.syspip]
+"$HOME/.sysenv" = [
+  'jupyter', 'notebook', 'matplotlib', 'numpy', 'scipy'
+] 
+
+
+[install.commands]
+cmds = [
+  'git clone https://github.com/LazyVim/starter ~/.config/nvim',
+  'python -m venv $HOME/.sysenv',
+  'echo "vn $HOME/.sysenv" >> "$HOME/.zu/zinit"',
+]
+

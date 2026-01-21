@@ -29,31 +29,8 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
-# Function and aliases
-function vn () {
-  if [[ $1 = "-l" ]]; then
-    local LAST_PATH="$(cat $ZDOT/.lastvn)"
-    . $LAST_PATH/bin/activate
-  else
-    if [[ -f $1/bin/activate ]]; then
-      . $1/bin/activate
-      local FILE=$(readlink -e $1)
-    fi
-  fi
-}
-
-export EDITOR=vim
-
-alias @zshrc="$EDITOR $HOME/.zshrc"
-alias @zr="@zsh ; exec zsh"
-alias @aliases="$EDITOR $ZUSER/.aliases"
-
-alias ls="ls --color=yes"
-alias la="ls -A"
-alias ll="ls -lAh"
-alias l="ls -lh"
-alias vim=nvim
-alias tmux="tmux -f $HOME/.z/conf/tmux.conf"
+# import aliases
+. $ZDOT/aliases.sh
 
 # Sourcing custom files
 if [[ -f $ZUSER/.aliases ]]; then

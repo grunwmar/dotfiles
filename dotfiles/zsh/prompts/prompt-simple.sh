@@ -162,7 +162,6 @@ function precmd() {
   USERN="%(!.%F{9}%n%f.%n)"
 
   PROMPT='
-
 $(system_icon_widget) $(clock_widget)  %F{reset_color} %n  %F{reset_color}$(host_icon_widget) %F{reset_color}%M
 $(colored_path_widget) '
 

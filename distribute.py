@@ -26,9 +26,16 @@ INDEX_SPACING = 2
 
 
 # create symlinks
-def create_symlink(source, target):
-    if os.path.exists(target):
-        pre_space = (2 * INDEX_SPACING + 6) * " "
+def create_symlink(index, source, target):
+    
+    nsp = len(str(index[1]))
+    index_pref = f"{index[0]: ^{nsp + INDEX_SPACING}}" | CGREEN
+    index_suff = f"{index[1]: ^{nsp + INDEX_SPACING}}" | CGREEN                               
+    pre_space = (2 * INDEX_SPACING + 6) * " "
+
+    print(f" [{index_pref}/{index_suff}] Symlink {source | CBLUE} --> {target | CCYAN}")
+    
+    if os.path.exists(target) or os.path.isfile(target) or os.path.isdir(target):
         print(
             f"{pre_space} ! Symlink '{target | CCYAN}' already exists. Removing old symlink."
         )
@@ -44,24 +51,17 @@ def create_symlink(source, target):
 def load_target_file(path):
     try:
         with open(path, "rb") as fp:
-            dirname = os.path.dirname(__file__)
+            dirname = os.path.dirname(__file__)[:-1]
             toml_data = toml.load(fp)
 
             for dotfiles in toml_data.keys():
                 data = toml_data[dotfiles]
                 size = len(data)
-                nsp = len(str(size))
                 for i, (source, target) in enumerate(data.items(), start=1):
+                    print(dirname,dotfiles,source)
                     abs_source_path = os.path.join(dirname, dotfiles, source)
-                    index_pref = f"{i: ^{nsp + INDEX_SPACING}}" | CGREEN
-                    index_suff = f"{size: ^{nsp + INDEX_SPACING}}" | CGREEN
-
-                    print(
-                        f" [{index_pref}/{index_suff}] Symlink {abs_source_path | CBLUE} --> {target | CCYAN}"
-                    )
-
                     target = target.replace("$HOME", os.environ["HOME"])
-                    create_symlink(abs_source_path, target)
+                    create_symlink([i,size],abs_source_path, target)
                     print()
     except Exception as exc:
         print("Error:", exc)
