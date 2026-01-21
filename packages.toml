@@ -3,7 +3,8 @@ description = "Installed packages and commands."
 
 
 [install.packagers]
-dnf = ['neovim', 'vlc', 'gimp', 'calibre']
+dnf = ['neovim', 'vlc', 'gimp', 'calibre', 'tmux']
+zypper = ['neovim', 'vlc', 'gimp', 'calibre', 'tmux']
 
 
 [install.syspip]
