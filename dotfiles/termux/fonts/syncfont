@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+rm $HOME/.termux/font.ttf
+
+ln -s $HOME/.termux/fonts/$1 $HOME/.termux/font.ttf

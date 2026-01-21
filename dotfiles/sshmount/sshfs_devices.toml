@@ -1,0 +1,11 @@
+["phone"]
+	label="phone"     	# Name of mount point
+	addr="192.168.1.77" 	# IP address or hostname
+	port="8022"
+	user="u0_a358"
+
+	# Identity file
+	id_file="$HOME/.ssh/id_ed25519"
+
+	# Mount [from, mount_point]
+	mount=["/data/data/com.termux/files/home/", "/run/media/martin/phone"]

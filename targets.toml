@@ -1,0 +1,5 @@
+[dotfiles]
+"zsh/zshrc" = "./test_dir/.zshrc"
+"tmux/tmux.conf" = "./test_dir/.tmux.conf"
+"tilda/" = "./test_dir/tilda"
+"fonts/" = "./test_dir/fonts"
