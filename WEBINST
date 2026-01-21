@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+URL=https://github.com/grunwmar/dotfiles.git
+DOTFILES=$HOME/.dotfiles
+git clone $URL $DOTFILES

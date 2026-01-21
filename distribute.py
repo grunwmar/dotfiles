@@ -32,7 +32,10 @@ def create_symlink(source, target):
         print(
             f"{pre_space} ! Symlink '{target | CCYAN}' already exists. Removing old symlink."
         )
-        os.remove(f"""{target}""")
+        if os.path.isdir(target):
+            os.system(f"""rm -rf {target}""")
+        else:
+            os.system(f"""rm {target}""")
     symlink_cmd = f"""ln -s "{source}" "{target}" """
     os.system(symlink_cmd)
 
@@ -56,6 +59,8 @@ def load_target_file(path):
                     print(
                         f" [{index_pref}/{index_suff}] Symlink {abs_source_path | CBLUE} --> {target | CCYAN}"
                     )
+
+                    target = target.replace("$HOME", os.environ["HOME"])
                     create_symlink(abs_source_path, target)
                     print()
     except Exception as exc:
