@@ -7,11 +7,6 @@ cd $DOTFILES
 
 echo ""
 echo ""
-echo -n "Install referenced packages and do commands referenced in 'packages.toml'? [N/y] "
-read answ
-
-if [[ $answ = "y" ]]; then
-  ./install.py
-fi
-
-
+echo "To install referenced packages and do commands referenced in 'packages.toml' run"
+echo "  cd ~/.dotfiles"
+echo "  :./install.py"
