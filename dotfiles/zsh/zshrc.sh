@@ -74,7 +74,7 @@ if [[ -d $ZUSER/plugins ]]; then
 fi
 
 # Source prompt style
-source $ZDOT/prompts/prompt.sh
+source $ZDOT/prompts/prompt-simple.sh
 
 if [[ -f $ZUSER/zinit ]]; then
   . $ZUSER/zinit
