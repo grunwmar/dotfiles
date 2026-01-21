@@ -1,5 +1,5 @@
 [dotfiles]
-"zsh/zshrc" = "$HOME/zshrc.sh"
+"zsh/zshrc" = "$HOME/.zshrc"
 "zsh/" = "$HOME/.z"
 "tmux/tmux.conf" = "$HOME/.tmux.conf"
 "tilda/" = "$HOME/.config/tilda"
