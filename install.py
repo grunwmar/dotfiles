@@ -53,11 +53,11 @@ def install_pkg(packager, packages):
         shcmd = shcmd_template.format(pkgr=packager, opt="install", pkgs=pkgs_string)
         run_cmd(shcmd)
 
-    elif packafer in ["apt", "apt-get"] and has_package(packager):
+    elif packager in ["apt", "apt-get"] and has_package(packager):
         shcmd = shcmd_template.format(pkgr=packager, opt="install", pkgs=pkgs_string)
         run_cmd(shcmd)
 
-    elif packafer in ["pacman"] and has_package(packager):
+    elif packager in ["pacman"] and has_package(packager):
         shcmd = shcmd_template.format(pkgr=packager, opt="-Syy", pkgs=pkgs_string)
         run_cmd(shcmd)
     else:
