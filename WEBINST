@@ -9,6 +9,7 @@ echo ""
 echo ""
 echo "To install referenced packages and do commands referenced in 'packages.toml' run"
 echo "  cd ~/.dotfiles"
-echo "  :./install.py"
+echo "  ./install.py"
 
-exec zsh
+sleep 5
+clear ; exec zsh
