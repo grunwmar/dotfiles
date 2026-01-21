@@ -49,6 +49,10 @@ def install_pkg(packager, packages):
         shcmd = shcmd_template.format(pkgr=packager, opt="install", pkgs=pkgs_string)
         run_cmd(shcmd)
 
+    if packager in ["zypper"] and has_package(packager):
+        shcmd = shcmd_template.format(pkgr=packager, opt="install", pkgs=pkgs_string)
+        run_cmd(shcmd)
+
     elif packafer in ["apt", "apt-get"] and has_package(packager):
         shcmd = shcmd_template.format(pkgr=packager, opt="install", pkgs=pkgs_string)
         run_cmd(shcmd)
