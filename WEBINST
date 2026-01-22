@@ -4,12 +4,16 @@ DOTFILES=$HOME/.dotfiles
 git clone $URL $DOTFILES
 cd $DOTFILES
 ./distribute.py
+sleep 10
+clear
 
-echo ""
 echo ""
 echo "To install referenced packages and do commands referenced in 'packages.toml' run"
 echo "  cd ~/.dotfiles"
 echo "  ./install.py"
+echo ""
+echo ""
+echo "Now wait for 5 sec, then zshell will be re-executed."
 
 sleep 5
 clear ; exec zsh
