@@ -1,5 +1,0 @@
-#!/usr/bin/zsh
-git pull -f 
-git add .
-git stash
-git pull --rebase

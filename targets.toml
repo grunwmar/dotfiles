@@ -1,9 +1,5 @@
 [dotfiles]
-"zsh/zshrc.sh" = "$HOME/.zshrc"
-"zsh/" = "$HOME/.z"
-"tmux/tmux.conf" = "$HOME/.config/tmux.conf"
-"tilda/" = "$HOME/.config/tilda"
+"tmux/tmux.conf" = "$HOME/.tmux.conf"
 "fonts/" = "$HOME/.local/share/fonts"
 "termux" = "$HOME/.termux"
-"sshmount/sshfs_devices.toml" = "$HOME/.config/sshfs_devices.toml"
 

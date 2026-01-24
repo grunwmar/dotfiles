@@ -3,18 +3,18 @@ description = "Installed packages and commands."
 
 
 [install.packagers]
-dnf = ['neovim', 'vlc', 'gimp', 'calibre', 'tmux']
-zypper = ['neovim', 'vlc', 'gimp', 'calibre', 'tmux']
+dnf = ['neovim', 'tmux']
+zypper = ['neovim', 'tmux']
 
 
 [install.syspip]
 "$HOME/.sysenv" = [
-  'jupyter', 'notebook', 'matplotlib', 'numpy', 'scipy'
 ] 
 
 
 [install.commands]
 cmds = [
+  'curl -fsSL https://raw.githubusercontent.com/grunwmar/zshrc/refs/heads/main/SETUP | zsh -s -- -i',
   'git clone https://github.com/LazyVim/starter ~/.config/nvim',
   'python -m venv $HOME/.sysenv',
   'echo "vn $HOME/.sysenv" >> "$HOME/.zu/zinit"',
